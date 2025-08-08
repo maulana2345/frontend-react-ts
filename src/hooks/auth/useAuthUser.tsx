@@ -1,7 +1,7 @@
-//import Js Cookie
+// Import Js Cookie
 import Cookies from 'js-cookie';
 
-//interface User
+// Interface User
 interface User {
     id: number;
     name: string;
@@ -10,10 +10,9 @@ interface User {
 }
 
 export const useAuthUser = (): User | null => {
-    // Mengambil data user dari cookie
-    const user = Cookies.get('user');
-
-    // Jika ada data user, parse JSON dan kembalikan
+    // Mengambil data User dari cookie
+    const user = Cookies.get("user"); 
+    // Jika ada data User, pake JSON dan kembalikan
     // Jika tidak ada, kembalikan null
-    return user ? JSON.parse(user) as User : null;
-};
+    return user ? JSON.parse(user) : null;
+}

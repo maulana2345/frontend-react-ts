@@ -1,26 +1,21 @@
-// import useMutation dari '@tanstack/react-query';
-import { useMutation } from '@tanstack/react-query';
+// Import useMutation dari '@tanstack/react-query'
+import { useMutation } from "@tanstack/react-query";
+// Import service API
+import Api from "../../services/api";
 
-//import service API
-import Api from '../../services/api';
-
-//interface LoginRequest
+// Interface LoginRequest
 interface LoginRequest {
     username: string;
     password: string;
 }
 
 export const useLogin = () => {
-
     return useMutation({
-
-        // mutation untuk login
+        // Mutation untuk login
         mutationFn: async (data: LoginRequest) => {
-
-            //menggunakan service API untuk login
+            // Menggunakan service API untuk Login
             const response = await Api.post('/api/login', data);
-
-            //mengembalikan response data
+            // Mengembalikan response data
             return response.data;
         }
     });

@@ -1,10 +1,9 @@
-// import useMutation dari '@tanstack/react-query';
-import { useMutation } from '@tanstack/react-query';
+// Import useMutation dari '@tanstack/react-query'
+import { useMutation } from "@tanstack/react-query";
+// Import service API
+import Api from "../../services/api";
 
-//import service API
-import Api from '../../services/api';
-
-//interface RegisterRequest
+// Interface RegisterRequest
 interface RegisterRequest {
     name: string;
     username: string;
@@ -13,17 +12,13 @@ interface RegisterRequest {
 }
 
 export const useRegister = () => {
-
     return useMutation({
-
-        // mutation untuk register
+        // Mutation untuk register
         mutationFn: async (data: RegisterRequest) => {
-
-            //menggunakan service API untuk register
+            // Menggunakan service API untuk register
             const response = await Api.post('/api/register', data);
-
-            //mengembalikan response data
+            // Mengembalikan response data
             return response.data;
         }
-    });
-};
+    })
+}
