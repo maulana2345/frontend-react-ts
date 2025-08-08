@@ -43,7 +43,8 @@ export default function AppRoutes() {
             } />
 
             {/* route "/admin/dashboard" */}
-            <Route path="/admin/dashboard" element={<Dashboard/>} />
+            <Route path="/admin/dashboard" element={
+                !isAuthenticated ? <Navigate to="/login" replace /> : <Dashboard/>} />
         </Routes>
     );
 }
