@@ -1,10 +1,16 @@
-//import FC from react
+// import FC from react
 import { FC } from "react";
 
-//import SidebarMenu
+// import SidebarMenu
 import SidebarMenu from '../../../components/SidebarMenu';
 
+// import custom hook useAuthUser
+import { useAuthUser } from "../../../hooks/auth/useAuthUser";
+
 const Dashboard: FC = () => {
+
+    const user = useAuthUser();
+
     return (
         <div className="container mt-5 mb-5">
             <div className="row">
@@ -17,7 +23,11 @@ const Dashboard: FC = () => {
                             DASHBOARD
                         </div>
                         <div className="card-body">
-                            Selamat Datang, <strong></strong>
+                            {user ? (
+                                <p>Selamat Datang, <strong>{user.name}</strong>!</p>
+                            ) : (
+                                <p>Kamu Belum Login</p>
+                            )}
                         </div>
                     </div>
                 </div>

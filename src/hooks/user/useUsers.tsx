@@ -1,13 +1,13 @@
 // import hook useQuery from react-query
 import { useQuery } from '@tanstack/react-query';
 
-//import service Api
+// import service Api
 import Api from '../../services/api';
 
 // import js-cookie
 import Cookies from 'js-cookie';
 
-//interface User
+// interface User
 export interface User {
     id: number;
     name: string;
@@ -15,7 +15,7 @@ export interface User {
     email: string;
 }
 
-//hook useUsers dengan return type User
+// hook useUsers dengan return type User
 export const useUsers = () => {
 
     return useQuery<User[], Error>({

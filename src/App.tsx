@@ -1,17 +1,17 @@
 // import FC from react
 import { FC } from 'react';
 
-//import router
+// import router
 import AppRoutes from './routes';
 
-//import Link from react router
+// import Link from react router
 import { Link } from "react-router";
 
 const App: FC = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div className="container">
           <Link to="/" className="navbar-brand">HOME</Link>
           <button
@@ -28,7 +28,7 @@ const App: FC = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a href="https://santrikoding.com" target="_blank" className="nav-link active" aria-current="page">OSENG NDESO</a>
+                <a target="_blank" className="nav-link active" aria-current="page">OSENG NDESO</a>
               </li>
             </ul>
           </div>
